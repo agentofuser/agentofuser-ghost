@@ -1,0 +1,39 @@
+{
+  "name": "nextjs-blog-starter-typescript-ghost",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "ghost-local-create": "docker run -d --name ghost-for-nextjs -p 3001:2368 -v $PWD/ghost:/var/lib/ghost/content -e url=http://localhost:3001 ghost",
+    "ghost-local-start": "docker container start ghost-for-nextjs",
+    "ghost-local-stop": "docker container stop ghost-for-nextjs",
+    "ghost-local-remove": "docker container stop ghost-for-nextjs; docker container rm ghost-for-nextjs",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@tryghost/content-api": "^1.4.13",
+    "classnames": "2.2.6",
+    "date-fns": "2.16.1",
+    "gray-matter": "4.0.2",
+    "next": "latest",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "remark": "13.0.0",
+    "remark-html": "13.0.1",
+    "typescript": "^4.1.3"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.11",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.21",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/tryghost__content-api": "^1.3.5",
+    "autoprefixer": "^10.2.1",
+    "postcss": "^8.2.4",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^2.0.2"
+  },
+  "license": "MIT"
+}
